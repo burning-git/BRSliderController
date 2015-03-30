@@ -14,6 +14,9 @@
 		6699C3841AC8FAA6007E5BBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6699C3831AC8FAA6007E5BBE /* Images.xcassets */; };
 		6699C3871AC8FAA6007E5BBE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6699C3851AC8FAA6007E5BBE /* LaunchScreen.xib */; };
 		6699C3931AC8FAA6007E5BBE /* BRSliderControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6699C3921AC8FAA6007E5BBE /* BRSliderControllerTests.m */; };
+		6699C3A31AC8FADB007E5BBE /* SliderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6699C39F1AC8FADB007E5BBE /* SliderCollectionViewCell.m */; };
+		6699C3A41AC8FADB007E5BBE /* SliderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6699C3A01AC8FADB007E5BBE /* SliderCollectionViewCell.xib */; };
+		6699C3A51AC8FADB007E5BBE /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6699C3A21AC8FADB007E5BBE /* SliderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		6699C38C1AC8FAA6007E5BBE /* BRSliderControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRSliderControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6699C3911AC8FAA6007E5BBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6699C3921AC8FAA6007E5BBE /* BRSliderControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRSliderControllerTests.m; sourceTree = "<group>"; };
+		6699C39E1AC8FADB007E5BBE /* SliderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderCollectionViewCell.h; sourceTree = "<group>"; };
+		6699C39F1AC8FADB007E5BBE /* SliderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderCollectionViewCell.m; sourceTree = "<group>"; };
+		6699C3A01AC8FADB007E5BBE /* SliderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCollectionViewCell.xib; sourceTree = "<group>"; };
+		6699C3A11AC8FADB007E5BBE /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
+		6699C3A21AC8FADB007E5BBE /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		6699C3751AC8FAA6007E5BBE /* BRSliderController */ = {
 			isa = PBXGroup;
 			children = (
+				6699C39C1AC8FADB007E5BBE /* BRSlider */,
 				6699C37A1AC8FAA6007E5BBE /* AppDelegate.h */,
 				6699C37B1AC8FAA6007E5BBE /* AppDelegate.m */,
 				6699C37D1AC8FAA6007E5BBE /* ViewController.h */,
@@ -117,6 +126,26 @@
 				6699C3911AC8FAA6007E5BBE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6699C39C1AC8FADB007E5BBE /* BRSlider */ = {
+			isa = PBXGroup;
+			children = (
+				6699C39D1AC8FADB007E5BBE /* SliderView */,
+				6699C3A11AC8FADB007E5BBE /* SliderViewController.h */,
+				6699C3A21AC8FADB007E5BBE /* SliderViewController.m */,
+			);
+			path = BRSlider;
+			sourceTree = "<group>";
+		};
+		6699C39D1AC8FADB007E5BBE /* SliderView */ = {
+			isa = PBXGroup;
+			children = (
+				6699C39E1AC8FADB007E5BBE /* SliderCollectionViewCell.h */,
+				6699C39F1AC8FADB007E5BBE /* SliderCollectionViewCell.m */,
+				6699C3A01AC8FADB007E5BBE /* SliderCollectionViewCell.xib */,
+			);
+			path = SliderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +231,7 @@
 				6699C3821AC8FAA6007E5BBE /* Main.storyboard in Resources */,
 				6699C3871AC8FAA6007E5BBE /* LaunchScreen.xib in Resources */,
 				6699C3841AC8FAA6007E5BBE /* Images.xcassets in Resources */,
+				6699C3A41AC8FADB007E5BBE /* SliderCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6699C3A51AC8FADB007E5BBE /* SliderViewController.m in Sources */,
 				6699C37F1AC8FAA6007E5BBE /* ViewController.m in Sources */,
 				6699C37C1AC8FAA6007E5BBE /* AppDelegate.m in Sources */,
 				6699C3791AC8FAA6007E5BBE /* main.m in Sources */,
+				6699C3A31AC8FADB007E5BBE /* SliderCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
