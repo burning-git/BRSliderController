@@ -72,7 +72,11 @@
     [self.view addSubview:line];
     [self.view addSubview:self.colletionView];
     
-    CGRect frame = CGRectMake(self.indicatorInsets.left, kTopViewHeight-INDICATOR_HEIGHT+0.5, self.topWidth, INDICATOR_HEIGHT);
+    float height_line=INDICATOR_HEIGHT;
+    if (self.lineHeight>0) {
+        height_line=self.lineHeight;
+    }
+    CGRect frame = CGRectMake(self.indicatorInsets.left, kTopViewHeight-height_line+0.5, self.topWidth,height_line);
     _indicator = [[UIView alloc] initWithFrame:frame];
     _indicator.backgroundColor=self.selectColor;
     [self.colletionView addSubview:self.indicator];

@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UIView *indicator;
 @property (nonatomic, assign) UIEdgeInsets indicatorInsets;
 @property(assign,nonatomic) NSInteger selectIndex;
+@property(assign,nonatomic) NSInteger  lineHeight;
 
 @property(assign,nonatomic) id<sliderScrollerDelegate>sliderDelegate;
 @property(assign,nonatomic) BOOL isNeedCustomWidth;

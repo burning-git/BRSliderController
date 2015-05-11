@@ -56,6 +56,7 @@
     
     SliderViewController * next=[[SliderViewController alloc] initWithViewControllers:array];
     next.titileArray=titiles;
+    next.lineHeight=2;
     next.selectColor=[UIColor greenColor];
     next.selectIndex=3;
     next.sliderDelegate=self;
