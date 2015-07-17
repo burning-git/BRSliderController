@@ -57,7 +57,11 @@
     SliderViewController * next=[[SliderViewController alloc] initWithViewControllers:array];
     next.titileArray=titiles;
     next.lineHeight=2;
-    next.selectColor=[UIColor greenColor];
+    next.selectTextColor=[UIColor greenColor];
+    
+    next.selectBgColor=[UIColor whiteColor];
+    next.defaultUnSelectBgColor=[UIColor lightGrayColor];
+   // next.separateColor=[UIColor redColor];
     next.selectIndex=3;
     next.sliderDelegate=self;
     [self.navigationController pushViewController:next animated:YES];

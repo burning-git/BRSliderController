@@ -30,9 +30,28 @@
 @property(assign,nonatomic) BOOL isNeedCustomWidth;
 -(void)silderWithIndex:(NSInteger)index isNeedScroller:(BOOL)isNeed;
 /**
- *  设置点中的颜色
+ *  设置点中文字的颜色
  */
-@property(strong,nonatomic) UIColor * selectColor;
+@property(strong,nonatomic) UIColor * selectTextColor;
+/**
+ *  默认非点中文字颜色
+ */
+@property(strong,nonatomic) UIColor * defaultUnSelectTextColor;
+
+/**
+ *  设置选中的背景颜色
+ */
+@property(strong,nonatomic) UIColor * selectBgColor;
+/**
+ *  默认非选中背景颜色
+ */
+@property(strong,nonatomic) UIColor * defaultUnSelectBgColor;
+
+/**
+ *  顶部分割线的颜色
+ */
+@property(strong,nonatomic) UIColor * separateColor;
+
 @property(strong,nonatomic) NSArray *viewControllers;
 - (instancetype)initWithViewControllers:(NSArray *)viewControllers;
 

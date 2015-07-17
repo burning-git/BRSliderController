@@ -33,6 +33,10 @@
         
         self.selectIndex=0;
         
+        self.selectBgColor=[UIColor whiteColor];
+        self.defaultUnSelectTextColor=[UIColor blackColor];
+        self.defaultUnSelectBgColor=[UIColor whiteColor];
+        self.separateColor=[UIColor lightGrayColor];
        // _selectedIndex = NSNotFound;
     }
     return self;
@@ -78,7 +82,7 @@
     }
     CGRect frame = CGRectMake(self.indicatorInsets.left, kTopViewHeight-height_line+0.5, self.topWidth,height_line);
     _indicator = [[UIView alloc] initWithFrame:frame];
-    _indicator.backgroundColor=self.selectColor;
+    _indicator.backgroundColor=self.selectTextColor;
     [self.colletionView addSubview:self.indicator];
     
     
@@ -121,11 +125,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)setSelectColor:(UIColor *)selectColor{
-    _selectColor=selectColor;
-    
+-(void)setSelectTextColor:(UIColor *)selectColor{
+    _selectTextColor=selectColor;
     
 }
+
 
 #pragma mark---顶部的滑动试图
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -133,7 +137,7 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     // return allSpaces.count;
-    return self.titileArray.count;
+    return _titileArray.count;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -151,20 +155,22 @@
     
     SliderCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:kIndexCell forIndexPath:indexPath];
     UILabel * line=[[UILabel alloc] initWithFrame:CGRectMake(self.topWidth-0.5, 0,0.5 ,CGRectGetHeight(cell.frame)-0.5)];
-    line.backgroundColor=[UIColor lightGrayColor];
+    line.backgroundColor=_separateColor;
     
     if (!_isNeedCustomWidth) {
         [cell insertSubview:line atIndex:cell.subviews.count-1];
 
     }
   
-    cell.titile.text=self.titileArray[indexPath.row];
+    cell.titile.text=_titileArray[indexPath.row];
     
     if (self.selectIndex==indexPath.row) {
-        cell.titile.textColor=self.selectColor;
+        cell.titile.textColor=_selectTextColor;
+        cell.backgroundColor=_selectBgColor;
     }
     else{
-        cell.titile.textColor=[UIColor blackColor];
+        cell.titile.textColor=_defaultUnSelectTextColor;
+        cell.backgroundColor=_defaultUnSelectBgColor;
     }
     return cell;
 }
@@ -179,7 +185,7 @@
     //[self.view endEditing:YES];
     
   
-    self.selectIndex=index;
+    _selectIndex=index;
     
     [UIView animateWithDuration:0.1*(abs((int)(self.selectIndex-index))) animations:^{
         CGRect newframe=self.indicator.frame;
